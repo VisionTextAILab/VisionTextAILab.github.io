@@ -1,4 +1,4 @@
-# VisionTextAILab    <img src="https://5b0988e595225.cdn.sohucs.com/images/20180510/c718df3b257246d994b2282bf1e4300c.jpg" alt="图片" width="30" height="30" align="bottom" />
+# VisionTextAILab    <img src="https://5b0988e595225.cdn.sohucs.com/images/20180510/c718df3b257246d994b2282bf1e4300c.jpg" alt="图片" width="45" height="30" align="bottom" />
 > 本课题组由张金霞老师带领，主要研究方向有多模态图文检索、缺陷检测和显著目标检测/排序等
 
 

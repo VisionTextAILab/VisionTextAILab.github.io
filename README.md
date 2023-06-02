@@ -1,143 +1,110 @@
-# markCV
-> Markdown 生成漂亮的简历网页
+# VisionTextAILab
+> 本课题组由张金霞老师带领，主要研究方向有多模态图文检索、缺陷检测和显著目标检测/排序等
 
-[示例](https://bigliao.github.io/markCV/)
 
-## 1. 特点
 
-### 使用 Markdown 写简历
+## 1. 课题组简介
 
-厌倦了写简历的时候找各种模板，那些模板编辑起来也很不方便，一不小心格式就乱了。
-最重要的是，**内容与表现不分离**，用程序员的话讲就是过于**耦合**，当你想换一个模板的时候又得重新编辑一遍。
+### 张金霞（副教授、博导）
 
-Markdown 作为一种通用文本格式就可以很好地解决这个问题。你只要专注于写内容，展示的事情交给其他渲染工具。本工具就是一个帮你生成漂亮的简历网页的工具。
+[个人主页](https://automation.seu.edu.cn/zjx/list.htm)
 
-### 在线简历
+**基本信息：** 张金霞，东南大学自动化学院副教授（破格），博士生导师，东南大学至善青年学者A类。研究方向为深度学习、图文预训练、计算机视觉、缺陷诊断等。作为项目负责人主持1项国家自然科学基金项目、1项江苏省自然科学基金项目、1项深度学习类企业合作项目和若干项重点实验室开放课题。在国际学术期刊和国际会议上发表学术论文30余篇，包括TII、PR、TMM等学科顶级期刊。第一发明人授权发明专利4项，公开发明专利7项。指导研究生电子设计竞赛获全国总决赛二等奖、全国总决赛最佳论文奖和华东分赛一等奖。指导本科毕业设计获校优和院优。参与教学的工程设计导论（研讨）课获江苏省一流课程。参与编写的教材《神经网络设计》入选江苏省重点教材和“十三五”国家重点图书出版规划（高等教育出版社）。以并列第一编者的身份编著一本《深度学习》教材，目前已出版5000+册。现为中国自动化学会模式识别与机器智能专委会通讯委员，江苏省人工智能学会模式识别专委会委员，江苏省自动化学会会员。担任Pattern Recognition, Neurocomputing等刊物审稿人，曾担任ACPR 2019 PC member，IscIDE2019 PC member等。
 
-简历应当方便传播，在线简历就可以很好做到这一点。别人问你要简历的时候，直接一串网址丢过去，无论微信、QQ 或者什么地方都可以直接打开，根本不用担心格式问题。本工具已经调整好了打印样式，直接打印网页就可以，可以说是非常方便。
+**学生招收情况：** 每年招收博士研究生1-2名，南京校区硕士研究生1-2名，苏州校区硕士研究生1-2名，无锡校区硕士研究生1-2名。
+欢迎勤奋、踏实、好学、对计算机视觉和机器学习感兴趣的同学。
 
-## 2. 使用方法
+**工作经历：**
+2019-04至今，东南大学，自动化学院，副教授（破格）
 
-### 方法一：直接使用Docker镜像
+2016-03至2019-03，东南大学，自动化学院，讲师
 
-pull镜像，准备一个文件夹，然后将简历文件、配置文件、输出目录挂载到容器内部：
+2012-10至2014-09，美国哈佛医学院，视觉注意实验室，访问学者，合作导师：Jeremy Wolfe教授
 
-```bash
-# 新建简历文件夹
-mkdir my-resume && cd my-resume
+### 课题组项目
 
-docker pull bigliao/mark-cv
+**多模态图文检索：** --------------------------------to be done-------------------------------------
 
-# 运行 docker
-# 注意 $(pwd) 是 linux 系统中的当前目录。windows 系统中应使用 ${pwd}
-docker run --rm \
-    -v $(pwd):/markCV/app \
-    -p 3000:3000 -it bigliao/mark-cv bash
+**缺陷检测：** ------------------------------------to be done---------------------------------------
 
-npm run dev # 开发、编写简历
-npm run build # 打包
-```
+**显著目标检测/排序：** ---------------------------to be done----------------------------------------
 
-### 方法二：自定义Docker容器
+### 课题组发表论文
 
-使用`node`镜像运行本项目即可，目前`node:12.10.0`试用正常。
+- Jingzheng Deng, Jinxia Zhang* et al, RGB-D salient object ranking based on depth stach and truth stack for complex indoor scenes, Pattern Recognition (1区)，accepted
 
-```bash
-git clone https://github.com/BigLiao/markCV.git
+-  Jinxia Zhang, Yu Shen,Jiacheng Jiang,Shixiong Fang,Liping Chen,Tingting Yan,Zuoyong Li,Kanjian Zhang, Weili Guo, Haikun Wei. Automatic detection of defective solar cells in electroluminescence images via global similarity and concatenated saliency guided network, IEEE TRANSACTIONS ON INDUSTRIAL INFORMATICS (1区), 2022.DOI:10.1109/TII.2022.3211088
 
-docker run --rm -v markCV:/markCV -w /markCV -p 3000:3000 -it node:12.10.0 bash
+-  Yu Shen, He, Z., Xu, Z., Wang, Y., Li, C., Jinxia Zhang*, Wei, H.* . Modeling of photovoltaic modules under common shading conditions. Energy( 1区), 256, 124618，2022. 已检索WOS:000834159800009
 
-npm install
+-  Yu Shen, Tao Fan, Guangzhi Lai, Zhixiong Na, Hu Liu, Ziyao Wang, Yiye Wang, Yiping Jiao, Xinyi Chen, Zhouwei Lou, Jinxia Zhang*, Kanjian Zhang, Haikun Wei*, Modified U-Net based photovoltaic array extraction from complex scene in aerial infrared thermal imagery. Solar Energy(2区), 240:90-103, 2022 已检索WOS:000809727300004
 
-npm run dev
-npm run build
-```
+-  Yu Shen, Zhen Xu, Yiye Wang, Chenxi Li, Peizhen Peng, Jinxia Zhang*, Kanjian Zhang, Haikun Wei*, Temperature Estimation of Partial Shaded Photovoltaic  Modules Using a Multi-physics Model, Journal of Photovoltaics(2区), 2022
 
-### 方法三：安装node环境
-本工具基于 [Node.js](https://nodejs.org) 开发，需要有 `Node.js` 开发环境。
+-  Qinghua Ren, Shijian Lu, Jinxia Zhang, Renjie Hu. Salient object detection by fusing local and global contexts. IEEE Transactions on Multimedia(1区), PP(99):1-1, 2020.
 
-#### 使用 npm 安装
-```bash
-# 先建一个文件夹存放简历
-mkdir my-resume && cd my-resume
+- Jinxia Zhang, Krista A. Ehinger, Haikun Wei, Kanjian Zhang, Jingyu Yang. A novel graph-based optimization framework for salient object detection.Pattern Recognition(1区), 64: 39-50, 2017.  WOS: 000392682400004. 
 
-# 初始化 npm
-npm init -y
+- Jinxia Zhang, Shixiong Fang, Haifeng Zhao, Guang-Hai Liu, Haikun Wei, Lihuan Chen, Kanjian Zhang. Multiple Gestalt principles-based graph for salient region detection.Journal of Electronic Imaging, 27(5), 051227 1-9, 2018. WOS: 000443279700026.
 
-# 安装 markCV
-npm install -S mark-cv
+- Jinxia Zhang, Xue Gong, Daryl Fougnie, Jeremy Wolfe. How humans react to changing rewards during visual foraging.Attention Perception & Psychophysics. 79(8): 2299-2309, 2017. WOS: 000414337800005.
 
-```
-#### 初始化
-直接使用 `npx markcv init`，自动创建简历模板。
+- Jinxia Zhang, Shixiong Fang, Krista A. Ehinger, Weili Guo, Wankou Yang, Haikun Wei. Probabilistic Hypergraph Optimization for Salient Object Detection. P368-378,ISciDE2017. WOS:000441466300032. 
 
-或者手动创建：
-```bash
-# 新建简历文件
-touch liming.md
+- Yu Shen, Xinyi Chen, Jinxia Zhang*, Liping Xie, Kanjian Zhang and Haikun Wei*, A Robust Automatic Method for Removing Projective Distortion of Photovoltaic Modules from Close Shot Images. PRCV, 2020
 
-# 写点内容
-echo '# 李明的个人信息' > liming.md
+- Wenjie Liu, Jinxia Zhang*, Haikun Wei*, Kanjian Zhang, Shixiong Fang, Liping Xie, Jian Ge. Short-term PV power prediction considering the influence of aerosol. EEMS, 2020
 
-# 配置 markCV 
-touch _config.yml
-# 把下面的配置内容抄进来
-```
+- Jinxia Zhang, Xue Gong, Daryl Fougnie, Jeremy Wolfe. Using the past to anticipate the future in human foraging behavior.Vision Research, 111:66-74, 2015.WOS:000356027200007.
 
-#### 编辑和预览简历
-```bash
-npx markcv write
-```
-打开浏览器访问 http://localhost:3000 可以看到效果。可以一边修改 markdown 一边看效果
+- Jinxia Zhang, Jundi Ding, Jingyu Yang. Exploiting global rarity, local contrast and central bias for salient region learning. Neurocomputing(2区), 144:569-580, 2014. WOS:000341677800054.
 
-#### 打包
-```bash
-npx markcv build
-```
-生成静态网页放在 dist 目录下。最后把生成的 dist 文件夹部署到服务器就可以了。
+- Z. Bylinskii*, E. DeGennaro*, R. Rajalingham*, H. Ruda*,Jinxia Zhang*, J.K. Tsotsos(The first 5 authors, listed alphabetically according to last name, contributed equally). Towards the quantitative evaluation of visual attention models,Vision Research, 116:258-268, 2015. WOS: 000364270400013.
 
-没有服务器的话可以部署到 GitHub Pages 上面。本工具提供了快捷命令
-```bash
-npx markcv publish
-```
+- Jinxia Zhang, Krista A. Ehinger, Jundi Ding, Jingyu Yang. A prior-based graph for salient object detection.ICIP , Paris, France, 27-30 October 2014, P1175-1178. WOS:000370063601069.
 
-### 通过 clone 本仓库使用
 
-你也可以选择直接 clone 本仓库代码到你的电脑上。然后自己可以调整样式。
-```bash
-git clone https://github.com/BigLiao/markCV.git
+## 2.在校生信息
+### 博-周自爱
+to be done
 
-cd markCV
+### 博-宋朝炀
+to be done
 
-npm install
+### 21-朱鑫超
+to be done
 
-npm run dev # 开发、编写简历
-npm run build # 打包
-npm run deploy # 发布到 GitHub Pages
+### 21-陈欣一
+to be done
 
-```
+### 21-袁茵
+to be done
 
-## 3. 配置
-需要在根目录里放一个 `_config.yml` 配置文件，内容如下
-```yml
-# 网页的 Title，在浏览器标签页里可以看到
-title: 'markCV - Beautiful online resume' 
+### 22-黄嘉乐
+to be done
 
-# 如果部署的时候部署放在根目录而是子目录的，就要配置 publicPath
-# 比如在 GitHub Pages 里，需要配置为项目名称，如下。
-# 可以不配置，默认是 / 
-publicPath: '/markCV/'
+### 22-曹云依
+to be done
 
-# 简历 markdown 地址，相对本配置文件的。必须
-resumePath: './markdown/resume-template.md'
+### 22-仲晓涵
+to be done
 
-# 是否展示头部基本信息。true 的话要设置下面的 headerInfo。
-showHeader: true
-headerInfo:
-  # 头像，相对本配置文件路径，或者 URL
-  # photo: 'https://avatars1.githubusercontent.com/u/22113206?s=460&v=4'
-  photo: './markdown/avatar.jpeg'
-  name: 'bigLiao'
-  phone: '151****1111'
-  email: 'bigliao@markcv.com'
-```
+### 23-占泽超
+to be done
+
+### 23-胡杨
+to be done
+
+### 23-贺莹
+to be done
+
+## 3.毕业生信息
+### 20-蒋嘉程
+to be done
+
+### 20-邓京政
+to be done
+
+### 20-陆馨妍
+to be done
+

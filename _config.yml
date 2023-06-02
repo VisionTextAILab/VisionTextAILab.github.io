@@ -1,6 +1,6 @@
 title: 'markCV - Beautiful online resume' # title in broswer
-publicPath: '/markCV/'
-resumePath: './markdown/resume-template.md'
+publicPath: '/'
+resumePath: './README.md'
 showHeader: true
 headerInfo:
   # photo: 'https://avatars1.githubusercontent.com/u/22113206?s=460&v=4'
